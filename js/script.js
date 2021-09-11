@@ -1,3 +1,5 @@
+// This event and function take cares of keyboard events.
+
 document.addEventListener('keydown',pressed);
 
 function pressed(e){
@@ -12,6 +14,18 @@ function pressed(e){
 }
 
 
+//Yhis event and function take cares of mouse events
+
+document.addEventListener('click',clicked);
+
+function clicked(e){
+    let s = e.srcElement.className;
+    let char = s[s.length-1]
+    keyData[char].audio.pause();
+    keyData[char].audio.currentTime = 0;
+    keyData[char].audio.play();
+    document.body.style.background = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+}
 
 var keyData = {
 
