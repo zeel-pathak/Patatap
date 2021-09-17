@@ -8,7 +8,7 @@ var counter=setInterval(timer, 100); //1000 will  run it every 1 second
 function timer()
 {
   count=count + 1;
-  if (count > 26)
+  if (count >= 26)
   {
      clearInterval(counter);
     //  $(".loader").css("display","none")
