@@ -36,5 +36,5 @@ a{
     position: fixed;
     text-align: center;
     bottom: 50%;
-    width: 100%;
+    width: 100% !important;
 }
