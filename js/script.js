@@ -46,7 +46,9 @@ document.addEventListener('click',clicked);
 function clicked(e){
     let s = e.srcElement.className;
     let char = s[s.length-1]
-    $("."+char).css({ border : "1px outset "}).fadeOut(500);
+    $("."+char).css({ border : "1px outset "}).fadeOut(1000,function(){
+        $(this).css({display : "unset", border : "none"})
+    });
     console.warn(char);
     keyData[char].audio.pause();
     keyData[char].audio.currentTime = 0;
