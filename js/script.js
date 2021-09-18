@@ -32,6 +32,9 @@ document.addEventListener('keydown',pressed);
 function pressed(e){
     if(keyData[e.key]){
     var me  =e.key;
+    $("."+me).css({ border : "1px outset "}).fadeOut(keyData[me].audio.duration*1000,function(){
+        $(this).css({display : "unset", border : "none"})
+    });
     keyData[me].audio.pause();
     keyData[me].audio.currentTime = 0;
     keyData[me].audio.play();
@@ -46,7 +49,7 @@ document.addEventListener('click',clicked);
 function clicked(e){
     let s = e.srcElement.className;
     let char = s[s.length-1]
-    $("."+char).css({ border : "1px outset "}).fadeOut(1000,function(){
+    $("."+char).css({ border : "1px outset "}).fadeOut(keyData[char].audio.duration*1000,function(){
         $(this).css({display : "unset", border : "none"})
     });
     console.warn(char);
