@@ -46,9 +46,12 @@ document.addEventListener('click',clicked);
 function clicked(e){
     let s = e.srcElement.className;
     let char = s[s.length-1]
+    $("."+char).css({ border : "1px outset "}).fadeOut(500);
+    console.warn(char);
     keyData[char].audio.pause();
     keyData[char].audio.currentTime = 0;
     keyData[char].audio.play();
+
     document.body.style.background = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 }
 
